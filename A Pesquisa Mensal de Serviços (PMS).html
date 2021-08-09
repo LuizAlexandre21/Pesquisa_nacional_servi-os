@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        A Pesquisa Mensal de Serviços (PMS) - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit;overflow:visible}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.figma{display:table;position:relative;width:100%;padding-bottom:56.25%}.figma iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;border:1px solid #eee}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{height:40px;padding:10px 4px;border-top-left-radius:0;border-bottom-left-radius:0}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:20px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:50%;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;text-decoration:none;padding-left:22px}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em;font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="true"><h1 id="A-Pesquisa-Mensal-de-Serviços-PMS" data-id="A-Pesquisa-Mensal-de-Serviços-PMS"><a class="anchor hidden-xs" href="#A-Pesquisa-Mensal-de-Serviços-PMS" title="A-Pesquisa-Mensal-de-Serviços-PMS"><span class="octicon octicon-link"></span></a><span>A Pesquisa Mensal de Serviços (PMS)</span></h1><h2 id="1-Pacotes" data-id="1-Pacotes"><a class="anchor hidden-xs" href="#1-Pacotes" title="1-Pacotes"><span class="octicon octicon-link"></span></a><span>1. Pacotes</span></h2><hr><ul>
+<li><strong><span>Pacotes para o python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd 
+<span class="hljs-keyword">import</span> locale
+<span class="hljs-keyword">import</span> datetime 
+<span class="hljs-keyword">from</span> statsmodels.tsa.stattools <span class="hljs-keyword">import</span> adfuller,acf,pacf
+<span class="hljs-keyword">from</span> statsmodels.tsa.arima.model <span class="hljs-keyword">import</span> ARIMA
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np 
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">from</span> tensorflow <span class="hljs-keyword">import</span> keras
+<span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split
+<span class="hljs-keyword">from</span> sklearn.naive_bayes <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> scipy <span class="hljs-keyword">import</span> stats
+</code></pre><ul>
+<li><strong><span>request</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-34-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-468" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-469" class="mjx-mrow"><span id="MJXc-Node-470" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-34">\rightarrow</script></span><span> Permite que você envie solicitações HTTP / 1.1 com extrema facilidade.</span></li>
+<li><strong><span>pandas</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-35-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-471" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-472" class="mjx-mrow"><span id="MJXc-Node-473" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-35">\rightarrow</script></span><span> É uma biblioteca de software criada para a linguagem Python para manipulação e análise de dados</span></li>
+<li><strong><span>locale</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-36-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-474" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-475" class="mjx-mrow"><span id="MJXc-Node-476" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-36">\rightarrow</script></span><span> O módulo de localidade abre o acesso ao banco de dados de localidade POSIX e à funcionalidade.</span></li>
+<li><strong><span>datetime</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-37-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-477" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-478" class="mjx-mrow"><span id="MJXc-Node-479" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-37">\rightarrow</script></span><span> O módulo datetime fornece classes para manipulação de datas e horas.</span></li>
+<li><strong><span>statsmodel</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-38-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-480" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-481" class="mjx-mrow"><span id="MJXc-Node-482" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-38">\rightarrow</script></span><span> É um pacote Python que permite aos usuários explorar dados, estimar modelos estatísticos e executar testes estatísticos</span></li>
+<li><strong><span>numpy</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-39-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-483" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-484" class="mjx-mrow"><span id="MJXc-Node-485" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-39">\rightarrow</script></span><span> É um pacote para a linguagem Python que suporta arrays e matrizes multidimensionais, possuindo uma larga coleção de funções matemáticas para trabalhar com estas estruturas</span></li>
+<li><strong><span>tensorflow</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-40-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-486" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-487" class="mjx-mrow"><span id="MJXc-Node-488" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-40">\rightarrow</script></span><span> É uma biblioteca de código aberto para aprendizado de máquina aplicável a uma ampla variedade de tarefas</span></li>
+<li><strong><span>sklearn</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-41-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-489" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-490" class="mjx-mrow"><span id="MJXc-Node-491" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-41">\rightarrow</script></span><span> É uma biblioteca de aprendizado de máquina de código aberto para a linguagem de programação Python</span></li>
+<li><strong><span>scipy</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-42-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-492" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-493" class="mjx-mrow"><span id="MJXc-Node-494" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-42">\rightarrow</script></span><span> É uma biblioteca Open Source em linguagem Python que foi feita para matemáticos, cientistas e engenheiros. Também tem o nome de uma popular conferência de programação científica com Python. A sua biblioteca central é NumPy que fornece uma manipulação conveniente e rápida de um array N-dimensional.</span></li>
+</ul><hr><ul>
+<li><strong><span>Pacotes para o R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-class"><span class="hljs-keyword">library</span>(<span class="hljs-params">jsonlite</span>)
+<span class="hljs-title"><span class="hljs-keyword">library</span></span>(<span class="hljs-params">dplyr</span>)
+<span class="hljs-title"><span class="hljs-keyword">library</span></span>(<span class="hljs-params">urca</span>)
+<span class="hljs-title"><span class="hljs-keyword">library</span></span>(<span class="hljs-params">stats</span>)
+<span class="hljs-title"><span class="hljs-keyword">library</span></span>(<span class="hljs-params">forecast</span>)
+</span></code></pre><ul>
+<li><strong><span>Jsonlite</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-43-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-495" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-496" class="mjx-mrow"><span id="MJXc-Node-497" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-43">\rightarrow</script></span><span> Um analisador e gerador JSON razoavelmente rápido, otimizado para dados estatísticos e para a web.</span></li>
+<li><strong><span>dplyr</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-44-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-498" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-499" class="mjx-mrow"><span id="MJXc-Node-500" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-44">\rightarrow</script></span><span> Um dos pacotes principais do tidyverse na linguagem de programação R, dplyr é principalmente um conjunto de funções projetado para permitir a manipulação de dataframe de uma forma intuitiva e amigável.</span></li>
+<li><strong><span>urca</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-45-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-501" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-502" class="mjx-mrow"><span id="MJXc-Node-503" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-45">\rightarrow</script></span><span> Unit root and cointegration tests encountered in applied econometric analysis are implemented.</span></li>
+<li><strong><span>forecast</span></strong><span> </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-46-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 123%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation"><span id="MJXc-Node-504" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-505" class="mjx-mrow"><span id="MJXc-Node-506" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.206em; padding-bottom: 0.358em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-46">\rightarrow</script></span><span> Métodos e ferramentas para exibir e analisar previsões de séries temporais univariadas, incluindo suavização exponencial por meio de modelos de espaço de estado e modelagem ARIMA automática.</span></li>
+</ul><h2 id="2-Coletando-os-dados" data-id="2-Coletando-os-dados"><a class="anchor hidden-xs" href="#2-Coletando-os-dados" title="2-Coletando-os-dados"><span class="octicon octicon-link"></span></a><span>2. Coletando os dados</span></h2><h3 id="21-Acessando-os-dados" data-id="21-Acessando-os-dados"><a class="anchor hidden-xs" href="#21-Acessando-os-dados" title="21-Acessando-os-dados"><span class="octicon octicon-link"></span></a><span>2.1 Acessando os dados</span></h3><p><span>Para acesso dos dados Pesquisa Mensal de Serviços (PMS), existem diversas formas, como o download arquivos em formato excel ou arquivos de CSV. Porem, mesmo a simplicidade da utilização de arquivos em formatos mais tradicionais, quando aplicado em trabalhos com grande volume de dados, existe uma chance da criação de residuos futuros.</span></p><p><span>Portanto, para evitar a geração de residuos no disco rigido, os dados serão obtidos diretamente da API disponibilizada pelo SIDRA/IBGE.</span></p><p><span>Para o acesso dos dados da Pesquisa Mensal de Serviços através da API do SIDRA/IBGE, podem ser utilizados os seguintes codigos nas linguagens python e R:</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Acesando o indice de serviço com a api do sidra/IBGE</span>
+url = requests.get(<span class="hljs-string">'https://apisidra.ibge.gov.br/values/t/6443/n1/all/v/8676/p/all/c11046/40311/c12355/107071/d/v8676%201'</span>)
+
+<span class="hljs-comment"># Criando arquivo json com o indice </span>
+json = url.json()
+
+<span class="hljs-comment"># Criando um Dataframe </span>
+data = pd.json_normalize(json)
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># Acesando o indice de serviço com a api do sidra/IBGE</span>
+<span class="hljs-attr">dados</span> = fromJSON(<span class="hljs-string">'https://apisidra.ibge.gov.br/values/t/6443/n1/all/v/8676/p/all/c11046/40311/c12355/107071/d/v8676%201'</span>)
+</code></pre><p><span>Portanto a estrutura dos dados é a seguinte</span></p><table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left"><span>NC</span></th>
+<th style="text-align:left"><span>NN</span></th>
+<th style="text-align:left"><span>MC</span></th>
+<th style="text-align:left"><span>MN</span></th>
+<th style="text-align:left"><span>V</span></th>
+<th style="text-align:left"><span>D1C</span></th>
+<th style="text-align:left"><span>D1N</span></th>
+<th style="text-align:left"><span>D2C</span></th>
+<th style="text-align:left"><span>D2N</span></th>
+<th style="text-align:left"><span>D3C</span></th>
+<th style="text-align:left"><span>D3N</span></th>
+<th style="text-align:left"><span>D4C</span></th>
+<th style="text-align:left"><span>D4N</span></th>
+<th style="text-align:left"><span>D5C</span></th>
+<th style="text-align:left"><span>D5N</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><span>0</span></td>
+<td style="text-align:left"><span>Nível Territorial (Código)</span></td>
+<td style="text-align:left"><span>Nível Territorial</span></td>
+<td style="text-align:left"><span>Unidade de Medida (Código)</span></td>
+<td style="text-align:left"><span>Unidade de Medida</span></td>
+<td style="text-align:left"><span>Valor</span></td>
+<td style="text-align:left"><span>Brasil (Código)</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>Variável (Código)</span></td>
+<td style="text-align:left"><span>Variável</span></td>
+<td style="text-align:left"><span>Mês (Código)</span></td>
+<td style="text-align:left"><span>Mês</span></td>
+<td style="text-align:left"><span>Tipos de índice (Código)</span></td>
+<td style="text-align:left"><span>Tipos de índice</span></td>
+<td style="text-align:left"><span>Atividades de serviços (Código)</span></td>
+<td style="text-align:left"><span>Atividades de serviços</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>1</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>30</span></td>
+<td style="text-align:left"><span>Número-índice</span></td>
+<td style="text-align:left"><span>71.3</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>8676</span></td>
+<td style="text-align:left"><span>Índice de receita nominal de serviços</span></td>
+<td style="text-align:left"><span>201101</span></td>
+<td style="text-align:left"><span>janeiro 2011</span></td>
+<td style="text-align:left"><span>40311</span></td>
+<td style="text-align:left"><span>Índice base fixa (2014=100)</span></td>
+<td style="text-align:left"><span>107071</span></td>
+<td style="text-align:left"><span>Total</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>2</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>30</span></td>
+<td style="text-align:left"><span>Número-índice</span></td>
+<td style="text-align:left"><span>71.3</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>8676</span></td>
+<td style="text-align:left"><span>Índice de receita nominal de serviços</span></td>
+<td style="text-align:left"><span>201102</span></td>
+<td style="text-align:left"><span>fevereiro 2011</span></td>
+<td style="text-align:left"><span>40311</span></td>
+<td style="text-align:left"><span>Índice base fixa (2014=100)</span></td>
+<td style="text-align:left"><span>107071</span></td>
+<td style="text-align:left"><span>Total</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>3</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>30</span></td>
+<td style="text-align:left"><span>Número-índice</span></td>
+<td style="text-align:left"><span>76.2</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>8676</span></td>
+<td style="text-align:left"><span>Índice de receita nominal de serviços</span></td>
+<td style="text-align:left"><span>201103</span></td>
+<td style="text-align:left"><span>março 2011</span></td>
+<td style="text-align:left"><span>40311</span></td>
+<td style="text-align:left"><span>Índice base fixa (2014=100)</span></td>
+<td style="text-align:left"><span>107071</span></td>
+<td style="text-align:left"><span>Total</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>4</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>30</span></td>
+<td style="text-align:left"><span>Número-índice</span></td>
+<td style="text-align:left"><span>75.5</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>8676</span></td>
+<td style="text-align:left"><span>Índice de receita nominal de serviços</span></td>
+<td style="text-align:left"><span>201104</span></td>
+<td style="text-align:left"><span>abril 2011</span></td>
+<td style="text-align:left"><span>40311</span></td>
+<td style="text-align:left"><span>Índice base fixa (2014=100)</span></td>
+<td style="text-align:left"><span>107071</span></td>
+<td style="text-align:left"><span>Total</span></td>
+</tr>
+</tbody>
+</table><h2 id="3-Limpando-os-dados" data-id="3-Limpando-os-dados"><a class="anchor hidden-xs" href="#3-Limpando-os-dados" title="3-Limpando-os-dados"><span class="octicon octicon-link"></span></a><span>3. Limpando os dados</span></h2><p><span>A maioria dos algoritimos para previsão não podem funcioonar com as residuos, dados com má formatação, caracteristicas faltantes, entre outros problemas existentes nos dados. Portanto nas proximas subseções serão desenvolvida algumas funções e rotinas para a correção de possiveis problemas dos nossos dados</span></p><h3 id="31-Renomeando-as-colunas" data-id="31-Renomeando-as-colunas"><a class="anchor hidden-xs" href="#31-Renomeando-as-colunas" title="31-Renomeando-as-colunas"><span class="octicon octicon-link"></span></a><span>3.1 Renomeando as colunas</span></h3><p><span>Como visto nos dados acima, existe duas inconsistências na nomeação das colunas, a primeira é a utilização de alguns códigos de referência no lugar de colunas, e a nomeação das colunas está na primeira linha dos dataframe. Portanto, será necessaria a renomeação das colunas, e em seguida a remoção da primeira linha do Dataframe.</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Renomeando os nomes das colunas</span>
+data=data.rename(columns=data.iloc[<span class="hljs-number">0</span>]).drop([<span class="hljs-number">0</span>])
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"># <span class="hljs-type">Renomeando</span> <span class="hljs-keyword">as</span> colunas
+<span class="hljs-title">names</span>(dados)&lt;-dados[<span class="hljs-number">1</span>,]
+# <span class="hljs-type">Removendo</span> <span class="hljs-keyword">as</span> linhas contendo nomes das colunas 
+<span class="hljs-title">dados</span> &lt;- dados[<span class="hljs-number">-1</span>,]
+</code></pre><p><span>Portanto a estrutura dos dados é a seguinte</span></p><table>
+<thead>
+<tr>
+<th style="text-align:right"><span>0</span></th>
+<th style="text-align:left"><span>Nível Territorial (Código)</span></th>
+<th style="text-align:left"><span>Nível Territorial</span></th>
+<th style="text-align:left"><span>Unidade de Medida (Código)</span></th>
+<th style="text-align:left"><span>Unidade de Medida</span></th>
+<th style="text-align:left"><span>Valor</span></th>
+<th style="text-align:left"><span>Brasil (Código)</span></th>
+<th style="text-align:left"><span>Brasil</span></th>
+<th style="text-align:left"><span>Variável (Código)</span></th>
+<th style="text-align:left"><span>Variável</span></th>
+<th style="text-align:left"><span>Mês (Código)</span></th>
+<th style="text-align:left"><span>Mês</span></th>
+<th style="text-align:left"><span>Tipos de índice (Código)</span></th>
+<th style="text-align:left"><span>Tipos de índice</span></th>
+<th style="text-align:left"><span>Atividades de serviços (Código)</span></th>
+<th style="text-align:left"><span>Atividades de serviços</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><span>1</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>30</span></td>
+<td style="text-align:left"><span>Número-índice</span></td>
+<td style="text-align:left"><span>71.3</span></td>
+<td style="text-align:left"><span>1</span></td>
+<td style="text-align:left"><span>Brasil</span></td>
+<td style="text-align:left"><span>8676</span></td>
+<td style="text-align:left"><span>Índice de receita nominal de serviços</span></td>
+<td style="text-align:left"><span>201101</span></td>
+<td style="text-align:left"><span>janeiro 2011</span></td>
+<td style="text-align:left"><span>40311</span></td>
+<td style="text-align:left"><span>Índice base fixa (2014=100)</span></td>
+<td style="text-align:left"><span>107071</span></td>
+<td style="text-align:left"><span>Total</span></td>
+</tr>
+</tbody>
+</table><h3 id="32-Filtrando-as-colunas" data-id="32-Filtrando-as-colunas"><a class="anchor hidden-xs" href="#32-Filtrando-as-colunas" title="32-Filtrando-as-colunas"><span class="octicon octicon-link"></span></a><span>3.2 Filtrando as colunas</span></h3><p><span>Agora podemos selecionar linhas de DataFrame que contenha ou não o uma coluna especifica. Essa operação auxilia na otimização da memoria RAM do computador e facilita na manipulação de operações com o DataFrame.</span></p><p><span>Portanto as colunas utilizadas serão as seguintes:</span></p><ul>
+<li><strong><span>Nível Territorial</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-421"><span class="MJXp-mo" id="MJXp-Span-422" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-47">\rightarrow</script></span><span> Variavel que indica a unidade geografica trabalhada</span></li>
+<li><strong><span>Valor</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-423"><span class="MJXp-mo" id="MJXp-Span-424" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-48">\rightarrow</script></span><span> Variavel referênte ao valor do índice de serviços</span></li>
+<li><strong><span>Mês</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-425"><span class="MJXp-mo" id="MJXp-Span-426" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-49">\rightarrow</script></span><span> Variavel referênte aos meses e anos</span></li>
+<li><strong><span>Atividades de serviços</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-427"><span class="MJXp-mo" id="MJXp-Span-428" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-50">\rightarrow</script></span><span> referênte a atividade do serviço</span></li>
+</ul><p><span>Portanto, o código para a filtragem dos dados é o seguinte</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Limpando as colunas </span>
+data = data.<span class="hljs-built_in">filter</span>(items=[<span class="hljs-string">'Nível Territorial'</span>,<span class="hljs-string">'Valor'</span>,<span class="hljs-string">'Mês'</span>,<span class="hljs-string">'Atividades de serviços'</span>],axis=<span class="hljs-number">1</span>)
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># Limpando as colunas </span>
+<span class="hljs-attribute">dados</span> &lt;- dados[,c(<span class="hljs-string">'Nível Territorial'</span>,<span class="hljs-string">'Valor'</span>,<span class="hljs-string">'Mês'</span>,<span class="hljs-string">'Atividades de serviços'</span>)]
+</code></pre><h3 id="33-Ajustando-as-unidades-de-tempo" data-id="33-Ajustando-as-unidades-de-tempo"><a class="anchor hidden-xs" href="#33-Ajustando-as-unidades-de-tempo" title="33-Ajustando-as-unidades-de-tempo"><span class="octicon octicon-link"></span></a><span>3.3 Ajustando as unidades de tempo</span></h3><p><span>Para a criação de series temporais consistentes, é necessário o estabelecimento de datas em um formato bem estruturado. Para a formatação dos dados, será aplicada os seguinte processo</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Corrigindo a localização do computador</span>
+locale.setlocale(locale.LC_ALL, <span class="hljs-string">'pt_BR.utf8'</span>)
+
+<span class="hljs-comment"># Convertendo a coluna 'Mês' para formato de datetime </span>
+date = []
+<span class="hljs-keyword">for</span> mes <span class="hljs-keyword">in</span> data[<span class="hljs-string">'Mês'</span>]:
+    date.append(datetime.datetime.strptime(mes,<span class="hljs-string">'%B %Y'</span>).strftime(<span class="hljs-string">'%m.%y'</span>))
+data[<span class="hljs-string">'Mês'</span>]=date 
+</code></pre><h3 id="34-Criando-uma-serie-temporal" data-id="34-Criando-uma-serie-temporal"><a class="anchor hidden-xs" href="#34-Criando-uma-serie-temporal" title="34-Criando-uma-serie-temporal"><span class="octicon octicon-link"></span></a><span>3.4 Criando uma serie temporal</span></h3><p><span>Como é defininido no manual do software estatistico Minitab (2019), Uma série temporal é uma sequência de observações em intervalos de tempo regularmente espaçados. Logo para as futuras operações com os dados temporais, devemos converter a coluna que contem os valores do indice em uma serie temporal, como apresentado a seguir</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Criando uma serie temporal </span>
+serie = pd.Series(data[<span class="hljs-string">'Valor'</span>].astype(<span class="hljs-string">'float64'</span>).to_list(),index=data[<span class="hljs-string">'Mês'</span>])
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># Criando uma serie temporal</span>
+<span class="hljs-attr">serie</span> = ts(data=as.numeric(dados<span class="hljs-variable">$Valor</span>),start=c(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>), end=c(<span class="hljs-number">2021</span>,<span class="hljs-number">5</span>),frequency=<span class="hljs-number">12</span>)
+</code></pre><p><img src="https://i.imgur.com/fkF7DVb.png" alt="" loading="lazy"></p><h2 id="4-Modelando-as-series-temporais" data-id="4-Modelando-as-series-temporais"><a class="anchor hidden-xs" href="#4-Modelando-as-series-temporais" title="4-Modelando-as-series-temporais"><span class="octicon octicon-link"></span></a><span>4 Modelando as series temporais</span></h2><h3 id="41-Testes" data-id="41-Testes"><a class="anchor hidden-xs" href="#41-Testes" title="41-Testes"><span class="octicon octicon-link"></span></a><span>4.1 Testes</span></h3><h4 id="411-Teste-de-Estacionaridade" data-id="411-Teste-de-Estacionaridade"><a class="anchor hidden-xs" href="#411-Teste-de-Estacionaridade" title="411-Teste-de-Estacionaridade"><span class="octicon octicon-link"></span></a><span>4.1.1 Teste de Estacionaridade</span></h4><p><span>Como aponta Freitas (2012), existem diversos testes de raiz unitária, entre eles</span></p><ul>
+<li><span>Augmented Dickey-Fuller</span></li>
+<li><span>Phillips-Perron</span></li>
+<li><span>Kwiatkowski-Phillips-Schmidt-Shin</span></li>
+</ul><p><span>Na maioria dos testes a hipótese nula é de que a série tenha raiz unitária, e portanto não seja estacionária, logo:</span></p><p><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math MJXp-display" id="MJXp-Span-429"><span class="MJXp-mtable" id="MJXp-Span-430"><span><span class="MJXp-mtr" id="MJXp-Span-431" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-432" style="text-align: right;"><span class="MJXp-mtable" id="MJXp-Span-433"><span><span class="MJXp-mtr" id="MJXp-Span-434" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-435" style="text-align: right;"><span class="MJXp-msubsup" id="MJXp-Span-436"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-437" style="margin-right: 0.05em;">H</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-438" style="vertical-align: -0.4em;">0</span></span><span class="MJXp-mo" id="MJXp-Span-439" style="margin-left: 0.111em; margin-right: 0.167em;">:</span></span><span class="MJXp-mtd" id="MJXp-Span-440" style="padding-left: 0em; text-align: left;"><span class="MJXp-mrow" id="MJXp-Span-441"><span class="MJXp-mtext" id="MJXp-Span-442">tem raiz unitária (não é estacionária)</span></span></span></span><span class="MJXp-mtr" id="MJXp-Span-443" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-444" style="padding-top: 0.3em; text-align: right;"><span class="MJXp-msubsup" id="MJXp-Span-445"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-446" style="margin-right: 0.05em;">H</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-447" style="vertical-align: -0.4em;">1</span></span><span class="MJXp-mo" id="MJXp-Span-448" style="margin-left: 0.111em; margin-right: 0.167em;">:</span></span><span class="MJXp-mtd" id="MJXp-Span-449" style="padding-left: 0em; padding-top: 0.3em; text-align: left;"><span class="MJXp-mrow" id="MJXp-Span-450"><span class="MJXp-mtext" id="MJXp-Span-451">não tem raiz unitária (é estacionária)</span></span></span></span></span></span></span></span></span></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-51">
+\begin{aligned}
+\begin{split}
+H_0: & \textrm{tem raiz unitária (não é estacionária)}\\
+H_1: & \textrm{não tem raiz unitária (é estacionária)}
+\end{split}
+\end{aligned}
+</script></span></p><p><span>Como apresentado em Enders (2014), Dickey e Fuller (1979) consideram três equações de regressões diferentes que podem ser usadas para testar a presença de uma raiz unitária</span></p><p><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math MJXp-display" id="MJXp-Span-452"><span class="MJXp-mtable" id="MJXp-Span-453"><span><span class="MJXp-mtr" id="MJXp-Span-454" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-455" style="text-align: right;"><span class="MJXp-mtable" id="MJXp-Span-456"><span><span class="MJXp-mtr" id="MJXp-Span-457" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-458" style="text-align: right;"><span class="MJXp-mi" id="MJXp-Span-459">Δ</span><span class="MJXp-msubsup" id="MJXp-Span-460"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-461" style="margin-right: 0.05em;">y</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-462" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-463" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-464">γ</span><span class="MJXp-msubsup" id="MJXp-Span-465"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-466" style="margin-right: 0.05em;">y</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-467" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-468">t</span><span class="MJXp-mo" id="MJXp-Span-469">−</span><span class="MJXp-mn" id="MJXp-Span-470">1</span></span></span><span class="MJXp-mo" id="MJXp-Span-471" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-472"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-473" style="margin-right: 0.05em;">ϵ</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-474" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-475">z</span><span class="MJXp-mspace" id="MJXp-Span-476" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-477" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-478" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-479" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-480" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mo" id="MJXp-Span-481" style="margin-left: 0em; margin-right: 0em;">(</span><span class="MJXp-mn" id="MJXp-Span-482">1</span><span class="MJXp-mo" id="MJXp-Span-483" style="margin-left: 0em; margin-right: 0em;">)</span></span></span><span class="MJXp-mtr" id="MJXp-Span-484" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-485" style="padding-top: 0.3em; text-align: right;"><span class="MJXp-mi" id="MJXp-Span-486">Δ</span><span class="MJXp-msubsup" id="MJXp-Span-487"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-488" style="margin-right: 0.05em;">y</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-489" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-490" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-msubsup" id="MJXp-Span-491"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-492" style="margin-right: 0.05em;">a</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-493" style="vertical-align: -0.4em;">0</span></span><span class="MJXp-mo" id="MJXp-Span-494" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-495">γ</span><span class="MJXp-msubsup" id="MJXp-Span-496"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-497" style="margin-right: 0.05em;">y</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-498" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-499" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-500"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-501" style="margin-right: 0.05em;">ϵ</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-502" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mspace" id="MJXp-Span-503" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-504" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-505" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-506" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mo" id="MJXp-Span-507" style="margin-left: 0em; margin-right: 0em;">(</span><span class="MJXp-mn" id="MJXp-Span-508">2</span><span class="MJXp-mo" id="MJXp-Span-509" style="margin-left: 0em; margin-right: 0em;">)</span></span></span><span class="MJXp-mtr" id="MJXp-Span-510" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-511" style="padding-top: 0.3em; text-align: right;"><span class="MJXp-mi" id="MJXp-Span-512">Δ</span><span class="MJXp-msubsup" id="MJXp-Span-513"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-514" style="margin-right: 0.05em;">y</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-515" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-516" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-msubsup" id="MJXp-Span-517"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-518" style="margin-right: 0.05em;">a</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-519" style="vertical-align: -0.4em;">0</span></span><span class="MJXp-mo" id="MJXp-Span-520" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-521">γ</span><span class="MJXp-msubsup" id="MJXp-Span-522"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-523" style="margin-right: 0.05em;">y</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-524" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-525" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mo" id="MJXp-Span-526" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-527"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-528" style="margin-right: 0.05em;">a</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-529" style="vertical-align: -0.4em;">2</span></span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-530">t</span><span class="MJXp-mo" id="MJXp-Span-531" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-532"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-533" style="margin-right: 0.05em;">ϵ</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-534" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mspace" id="MJXp-Span-535" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-536" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mspace" id="MJXp-Span-537" style="width: 0.278em; height: 0em;"></span><span class="MJXp-mo" id="MJXp-Span-538" style="margin-left: 0em; margin-right: 0em;">(</span><span class="MJXp-mn" id="MJXp-Span-539">3</span><span class="MJXp-mo" id="MJXp-Span-540" style="margin-left: 0em; margin-right: 0em;">)</span></span></span></span></span></span></span></span></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-52">
+\begin{aligned}
+\begin{split}
+\Delta y_t = \gamma y_{t -1} +\epsilon_t z  \;\;\;\;\; (1)\\
+\Delta y_t = a_0 + \gamma y_t + \epsilon_t \;\;\;\; (2)\\
+\Delta y_t = a_0 + \gamma y_t + +a_2t +\epsilon_t \; \; \;(3) 
+\end{split}
+\end{aligned}
+</script></span></p><ul>
+<li><span>(1) </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-541"><span class="MJXp-mo" id="MJXp-Span-542" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-53">\rightarrow</script></span><span> Modelo de passeio aleatório puro</span></li>
+<li><span>(2) </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-543"><span class="MJXp-mo" id="MJXp-Span-544" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-54">\rightarrow</script></span><span> Modelo de passeio aleatório com </span><em><span>drift</span></em></li>
+<li><span>(3) </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-545"><span class="MJXp-mo" id="MJXp-Span-546" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-55">\rightarrow</script></span><span> Modelo de passeio aleatório com </span><em><span>drift</span></em><span> e componente de tendência</span></li>
+</ul><p><span>Portanto podemos testar os diferentes modelos da seguinte maneira:</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Test Augmented Dickey-Fuller - com constante e com tendência </span>
+adf_1 = {<span class="hljs-string">'adf'</span>:adfuller(serie,regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">0</span>],<span class="hljs-string">'pvalue'</span>:adfuller(serie,regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">1</span>],<span class="hljs-string">'Nº de lags'</span>: adfuller(serie,regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">2</span>],<span class="hljs-string">'Critical_value'</span>:adfuller(serie, regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">4</span>][<span class="hljs-string">'5%'</span>]}
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Com constante</span>
+adf_2 = {<span class="hljs-string">'adf'</span>:adfuller(serie)[<span class="hljs-number">0</span>],<span class="hljs-string">'pvalue'</span>:adfuller(serie)[<span class="hljs-number">1</span>],<span class="hljs-string">'Nº de lags'</span>: adfuller(serie)[<span class="hljs-number">2</span>],<span class="hljs-string">'Critical_value'</span>:adfuller(serie)[<span class="hljs-number">4</span>][<span class="hljs-string">'5%'</span>]}
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Sem constante e Sem tendência </span>
+adf_3 = {<span class="hljs-string">'adf'</span>:adfuller(serie,regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">0</span>],<span class="hljs-string">'pvalue'</span>:adfuller(serie,regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">1</span>],<span class="hljs-string">'Nº de lags'</span>: adfuller(serie,regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">2</span>],<span class="hljs-string">'Critical_value'</span>:adfuller(serie, regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">4</span>][<span class="hljs-string">'5%'</span>]}
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># Test Augmented -Fuller - Com constante e com tendência </span>
+<span class="hljs-attr">adf_1</span> = ur.df(as.numeric(serie),type=<span class="hljs-string">"trend"</span>)
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Com constante</span>
+<span class="hljs-attr">adf_2</span> = ur.df(as.numeric(serie),type=<span class="hljs-string">"drift"</span>)
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Com constante</span>
+<span class="hljs-attr">adf_3</span> = ur.df(as.numeric(serie),type=<span class="hljs-string">"none"</span>)
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:right"><span>adf</span></th>
+<th style="text-align:right"><span>pvalue</span></th>
+<th style="text-align:right"><span>Nº de lags</span></th>
+<th style="text-align:right"><span>Critical_value</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><span>Com caonstante e Tendência</span></td>
+<td style="text-align:right"><span>-2.94387</span></td>
+<td style="text-align:right"><span>0.148457</span></td>
+<td style="text-align:right"><span>12</span></td>
+<td style="text-align:right"><span>-3.45044</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>Com constante e sem tendência</span></td>
+<td style="text-align:right"><span>-2.09686</span></td>
+<td style="text-align:right"><span>0.245778</span></td>
+<td style="text-align:right"><span>13</span></td>
+<td style="text-align:right"><span>-2.88795</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>Sem constante e sem tendência</span></td>
+<td style="text-align:right"><span>1.25676</span></td>
+<td style="text-align:right"><span>0.946364</span></td>
+<td style="text-align:right"><span>12</span></td>
+<td style="text-align:right"><span>-1.94364</span></td>
+</tr>
+</tbody>
+</table><h4 id="412-Teste-de-Sazonalidade" data-id="412-Teste-de-Sazonalidade"><a class="anchor hidden-xs" href="#412-Teste-de-Sazonalidade" title="412-Teste-de-Sazonalidade"><span class="octicon octicon-link"></span></a><span>4.1.2 Teste de Sazonalidade</span></h4><p><span>Como define Brownlee (2016), uma variação temporal é um ciclo que se repete ao longo do tempo, com uma frequencia que pode ser mensal ou anual. Esse ciclo de repetição pode obscurecer a sua modelagem, e por sua vez, pode fornecer problemas para a construção de modelos preditivos</span></p><p><span>Uma alternativa para detecção de sazonalidade na serie temporal é a aplicação do teste de Friedman (1937), na qual é uma alternativa à analise de variância quando não é possivel assumir que os dados provem de uma população com distribuição normal. No contexto de series temporais, o Teste de Friedman divide a érie em blocos de períodos e calcula o posto de cada observção em cada bloco. Logo, se houver sazonalidade, há evidências de que pelo menos em dois meses existe diferença significativa em suas médias ao longo dos anos.</span></p><p><span>Logo a hipótese desse teste é:</span></p><p><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math MJXp-display" id="MJXp-Span-547"><span class="MJXp-mtable" id="MJXp-Span-548"><span><span class="MJXp-mtr" id="MJXp-Span-549" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-550" style="text-align: right;"><span class="MJXp-mtable" id="MJXp-Span-551"><span><span class="MJXp-mtr" id="MJXp-Span-552" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-553" style="text-align: right;"><span class="MJXp-msubsup" id="MJXp-Span-554"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-555" style="margin-right: 0.05em;">H</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-556" style="vertical-align: -0.4em;">0</span></span><span class="MJXp-mo" id="MJXp-Span-557" style="margin-left: 0.111em; margin-right: 0.167em;">:</span></span><span class="MJXp-mtd" id="MJXp-Span-558" style="padding-left: 0em; text-align: left;"><span class="MJXp-msubsup" id="MJXp-Span-559"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-560" style="margin-right: 0.05em;">T</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-561" style="vertical-align: -0.4em;">1</span></span><span class="MJXp-mo" id="MJXp-Span-562" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-msubsup" id="MJXp-Span-563"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-564" style="margin-right: 0.05em;">T</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-565" style="vertical-align: -0.4em;">2</span></span><span class="MJXp-mo" id="MJXp-Span-566" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-msubsup" id="MJXp-Span-567"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-568" style="margin-right: 0.05em;">T</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-569" style="vertical-align: -0.4em;">3</span></span><span class="MJXp-mo" id="MJXp-Span-570" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-mo" id="MJXp-Span-571" style="margin-left: 0em; margin-right: 0.222em;">.</span><span class="MJXp-mo" id="MJXp-Span-572" style="margin-left: 0em; margin-right: 0.222em;">.</span><span class="MJXp-mo" id="MJXp-Span-573" style="margin-left: 0em; margin-right: 0.222em;">.</span><span class="MJXp-mo" id="MJXp-Span-574" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-msubsup" id="MJXp-Span-575"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-576" style="margin-right: 0.05em;">T</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-577" style="vertical-align: -0.4em;">k</span></span></span></span><span class="MJXp-mtr" id="MJXp-Span-578" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-579" style="padding-top: 0.3em; text-align: right;"><span class="MJXp-msubsup" id="MJXp-Span-580"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-581" style="margin-right: 0.05em;">H</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-582" style="vertical-align: -0.4em;">1</span></span><span class="MJXp-mo" id="MJXp-Span-583" style="margin-left: 0.111em; margin-right: 0.167em;">:</span></span><span class="MJXp-mtd" id="MJXp-Span-584" style="padding-left: 0em; padding-top: 0.3em; text-align: left;"><span class="MJXp-msubsup" id="MJXp-Span-585"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-586" style="margin-right: 0.05em;">T</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-587" style="vertical-align: -0.4em;">1</span></span><span class="MJXp-mo" id="MJXp-Span-588" style="margin-left: 0.333em; margin-right: 0.333em;">≠</span><span class="MJXp-msubsup" id="MJXp-Span-589"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-590" style="margin-right: 0.05em;">T</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-591" style="vertical-align: -0.4em;">2</span></span><span class="MJXp-mo" id="MJXp-Span-592" style="margin-left: 0.333em; margin-right: 0.333em;">≠</span><span class="MJXp-msubsup" id="MJXp-Span-593"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-594" style="margin-right: 0.05em;">T</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-595" style="vertical-align: -0.4em;">3</span></span><span class="MJXp-mo" id="MJXp-Span-596" style="margin-left: 0.333em; margin-right: 0.333em;">≠</span><span class="MJXp-mo" id="MJXp-Span-597" style="margin-left: 0em; margin-right: 0.222em;">.</span><span class="MJXp-mo" id="MJXp-Span-598" style="margin-left: 0em; margin-right: 0.222em;">.</span><span class="MJXp-mo" id="MJXp-Span-599" style="margin-left: 0em; margin-right: 0.222em;">.</span><span class="MJXp-mo" id="MJXp-Span-600" style="margin-left: 0.333em; margin-right: 0.333em;">≠</span><span class="MJXp-msubsup" id="MJXp-Span-601"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-602" style="margin-right: 0.05em;">T</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-603" style="vertical-align: -0.4em;">k</span></span></span></span></span></span></span></span></span></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-56">
+\begin{aligned}
+\begin{split}
+H_0: & T_1 = T_2 = T_3= ...= T_k \\
+H_1: & T_1 \neq T_2 \neq T_3\neq ...\neq T_k
+\end{split}
+\end{aligned}
+</script></span></p><p><span>Portanto podemos aplicar o teste de friedman da seguinte forma:</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Função de destrinchamento das series</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Sazonality</span>(<span class="hljs-params">serie,<span class="hljs-built_in">type</span></span>):</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">type</span> == <span class="hljs-string">"trimestre"</span>:
+        size = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(serie),<span class="hljs-number">3</span>))
+        data=[]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(size)-<span class="hljs-number">1</span>):
+            data.append(serie[size[i]:size[i+<span class="hljs-number">1</span>]])
+
+    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">type</span> == <span class="hljs-string">"quadrimestre"</span>:
+        size = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(serie),<span class="hljs-number">4</span>))
+        data=[]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(size)-<span class="hljs-number">1</span>):
+            data.append(serie[size[i]:size[i+<span class="hljs-number">1</span>]])
+        
+    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">type</span> == <span class="hljs-string">"semestre"</span>:
+        size = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(serie),<span class="hljs-number">6</span>))
+        data=[]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(size)-<span class="hljs-number">1</span>):
+            data.append(serie[size[i]:size[i+<span class="hljs-number">1</span>]])
+
+    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">type</span> == <span class="hljs-string">"anual"</span>:
+        size = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(serie),<span class="hljs-number">12</span>))
+        data=[]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(size)-<span class="hljs-number">1</span>):
+            data.append(serie[size[i]:size[i+<span class="hljs-number">1</span>]])
+
+    <span class="hljs-keyword">return</span> data
+</code></pre><pre><code class="python hljs"><span class="hljs-comment"># Sazonalidade - Quadrimestre</span>
+data=Sazonality(serie,<span class="hljs-string">"quadrimestre"</span>)
+saz_quart=stats.friedmanchisquare(data[<span class="hljs-number">0</span>],data[<span class="hljs-number">1</span>],data[<span class="hljs-number">2</span>],data[<span class="hljs-number">3</span>],data[<span class="hljs-number">4</span>],data[<span class="hljs-number">5</span>],data[<span class="hljs-number">6</span>])
+
+<span class="hljs-comment"># Sazonalidade - Trimestral</span>
+data=Sazonality(serie,<span class="hljs-string">"trimestre"</span>)
+saz_trim = stats.friedmanchisquare(data[<span class="hljs-number">1</span>],data[<span class="hljs-number">2</span>],data[<span class="hljs-number">3</span>],data[<span class="hljs-number">4</span>],data[<span class="hljs-number">5</span>],data[<span class="hljs-number">6</span>],data[<span class="hljs-number">7</span>])
+
+<span class="hljs-comment"># Sazonalidade - Semestral</span>
+data=Sazonality(serie,<span class="hljs-string">"semestre"</span>)
+saz_semes= stats.friedmanchisquare(data[<span class="hljs-number">7</span>],data[<span class="hljs-number">6</span>],data[<span class="hljs-number">5</span>],data[<span class="hljs-number">4</span>],data[<span class="hljs-number">3</span>],data[<span class="hljs-number">2</span>],data[<span class="hljs-number">1</span>])
+
+<span class="hljs-comment"># Sazonalidade - Anual</span>
+data=Sazonality(serie,<span class="hljs-string">"anual"</span>)
+saz_anual= stats.friedmanchisquare(data[<span class="hljs-number">1</span>],data[<span class="hljs-number">2</span>],data[<span class="hljs-number">3</span>],data[<span class="hljs-number">4</span>],data[<span class="hljs-number">5</span>],data[<span class="hljs-number">6</span>],data[<span class="hljs-number">7</span>])
+</code></pre><table>
+<thead>
+<tr>
+<th><span>Sazonalidade</span></th>
+<th><span>Valor</span></th>
+<th><span>p-valor</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>Trimestre</span></td>
+<td><span>16.14285</span></td>
+<td><span>0.01300</span></td>
+</tr>
+<tr>
+<td><span>Quadrimestre</span></td>
+<td><span>22.17857</span></td>
+<td><span>0.00112</span></td>
+</tr>
+<tr>
+<td><span>Semestre</span></td>
+<td><span>33.35714</span></td>
+<td><span>8.95e-06</span></td>
+</tr>
+<tr>
+<td><span>Anual</span></td>
+<td><span>65.64285</span></td>
+<td><span>3.188e-12</span></td>
+</tr>
+</tbody>
+</table><h3 id="413-Correlograma" data-id="413-Correlograma"><a class="anchor hidden-xs" href="#413-Correlograma" title="413-Correlograma"><span class="octicon octicon-link"></span></a><span>4.1.3 Correlograma</span></h3><p><span>Na análise de dados, um correlograma é um gráfico de estatísticas de correlação. O correlograma é uma ferramenta comumente usada para verificar a aleatoriedade em um conjunto de dados. Se aleatórias, as autocorrelações devem ser próximas a zero para todas as separações de intervalo de tempo. Se não for aleatório, então uma ou mais das autocorrelações serão significativamente diferentes de zero</span></p><ul>
+<li>
+<p><strong><span>Autocorrelação</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-604"><span class="MJXp-mo" id="MJXp-Span-605" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-57">\rightarrow</script></span><span> Como apresenta Holmes, Scheuerell e Ward (2021), A função de autocorrelação é a correlação de uma variável consigo mesma em diferentes intervalos de tempo.</span></p>
+</li>
+<li>
+<p><strong><span>Autocorrelação Parcial</span></strong><span>  </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-606"><span class="MJXp-mo" id="MJXp-Span-607" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-58">\rightarrow</script></span><span> Tambem como apresenta Holmes, Scheuerell e Ward (2021), A função de autocorrelação parcial (PACF) mede a correlação linear de uma série </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-608"><span class="MJXp-mo" id="MJXp-Span-609" style="margin-left: 0em; margin-right: 0em;">{</span><span class="MJXp-msubsup" id="MJXp-Span-610"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-611" style="margin-right: 0.05em;">x</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-612" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-613" style="margin-left: 0em; margin-right: 0em;">}</span></span></span><script type="math/tex" id="MathJax-Element-59">\{x_t \}</script></span><span> e uma versão defasada de si mesma </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-614"><span class="MJXp-mo" id="MJXp-Span-615" style="margin-left: 0em; margin-right: 0em;">{</span><span class="MJXp-msubsup" id="MJXp-Span-616"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-617" style="margin-right: 0.05em;">x</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-618" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-619" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-620">k</span><span class="MJXp-mo" id="MJXp-Span-621" style="margin-left: 0em; margin-right: 0em;">}</span></span></span><script type="math/tex" id="MathJax-Element-60">\{ x_t + k \}</script></span><span> com a dependência linear de </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-622"><span class="MJXp-mo" id="MJXp-Span-623" style="margin-left: 0em; margin-right: 0em;">{</span><span class="MJXp-msubsup" id="MJXp-Span-624"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-625" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-626" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-627">t</span><span class="MJXp-mo" id="MJXp-Span-628">−</span><span class="MJXp-mn" id="MJXp-Span-629">1</span></span></span><span class="MJXp-mo" id="MJXp-Span-630" style="margin-left: 0em; margin-right: 0.222em;">,</span><span class="MJXp-msubsup" id="MJXp-Span-631"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-632" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-633" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-634">t</span><span class="MJXp-mo" id="MJXp-Span-635">−</span><span class="MJXp-mn" id="MJXp-Span-636">2</span></span></span><span class="MJXp-mo" id="MJXp-Span-637" style="margin-left: 0em; margin-right: 0.222em;">,</span><span class="MJXp-mo" id="MJXp-Span-638" style="margin-left: 0em; margin-right: 0em;">…</span><span class="MJXp-mo" id="MJXp-Span-639" style="margin-left: 0em; margin-right: 0.222em;">,</span><span class="MJXp-msubsup" id="MJXp-Span-640"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-641" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-642" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-643">t</span><span class="MJXp-mo" id="MJXp-Span-644">−</span><span class="MJXp-mo" id="MJXp-Span-645">(</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-646">k</span><span class="MJXp-mo" id="MJXp-Span-647">−</span><span class="MJXp-mn" id="MJXp-Span-648">1</span><span class="MJXp-mo" id="MJXp-Span-649">)</span></span></span><span class="MJXp-mo" id="MJXp-Span-650" style="margin-left: 0em; margin-right: 0em;">}</span></span></span><script type="math/tex" id="MathJax-Element-61">\{ x_{t − 1}, x_{t − 2},…, x_{t− (k − 1 )} \}</script></span><span> removido</span></p>
+</li>
+<li>
+<p><strong><span>Python</span></strong></p>
+</li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Autocorrelação</span>
+autocorrelação = acf(serie)
+
+<span class="hljs-comment"># Autocorrelação Parcial </span>
+autocorrelação_parcial = pacf(serie)
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># 3.3.1 Autocorrelação </span>
+autocorrelação &lt;- acf(<span class="hljs-keyword">as</span>.numeric(serie),lag.<span class="hljs-built_in">max</span>=<span class="hljs-number">36</span>,plot=FALSE)
+
+<span class="hljs-comment"># 3.3.2 Autocorrelação Parcial </span>
+autocorrelação_parcial &lt;- pacf(<span class="hljs-keyword">as</span>.numeric(serie),lag.<span class="hljs-built_in">max</span>=<span class="hljs-number">36</span>,plot=FALSE)
+</code></pre><ul>
+<li>
+<p><strong><span>Função de autocorrelação</span></strong><br>
+<img src="https://i.imgur.com/eK9lUuY.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p><strong><span>Função de autocorrelação parcial</span></strong><br>
+<img src="https://i.imgur.com/U0vv9m9.png" alt="" loading="lazy"></p>
+</li>
+</ul><h3 id="42-Diferenciando-as-series" data-id="42-Diferenciando-as-series"><a class="anchor hidden-xs" href="#42-Diferenciando-as-series" title="42-Diferenciando-as-series"><span class="octicon octicon-link"></span></a><span>4.2 Diferenciando as series</span></h3><p><span>Como afirma Enders (2014), uma série conter uma tendência estocástica não reverterá para um nível de longo prazo.A tendência presente em uma serie temporal pode ter componentes determinísticos e estocásticos. Portanto um dos métodos usuais para eliminar a tendência é a diferenciação da serie temporal.</span></p><p><span>Portanto para a diferenciação da serie pode-se utilizar os seguintes códigos :</span></p><pre><code class="python hljs"><span class="hljs-comment"># Criando a serie diferenciada </span>
+serie_diff = serie.diff().dropna()
+</code></pre><pre><code class="R hljs"><span class="hljs-comment"># Criando a serie diferenciada </span>
+<span class="hljs-attr">serie_diff</span> = diff(as.numeric(serie))
+</code></pre><p><img src="https://i.imgur.com/QEacPQK.png" alt="" loading="lazy"></p><h4 id="421-Teste-de-estacionariedade" data-id="421-Teste-de-estacionariedade"><a class="anchor hidden-xs" href="#421-Teste-de-estacionariedade" title="421-Teste-de-estacionariedade"><span class="octicon octicon-link"></span></a><span>4.2.1 Teste de estacionariedade</span></h4><pre><code class="python hljs"><span class="hljs-comment">#  Test Augmented -Fuller - Com constante e com tendência </span>
+adf_1 = {<span class="hljs-string">'adf'</span>:adfuller(serie_diff,regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">0</span>],<span class="hljs-string">'pvalue'</span>:adfuller(serie_diff,regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">1</span>],<span class="hljs-string">'Nº de lags'</span>: adfuller(serie_diff,regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">2</span>],<span class="hljs-string">'Critical_value'</span>:adfuller(serie_diff, regression=<span class="hljs-string">"ct"</span>)[<span class="hljs-number">4</span>][<span class="hljs-string">'5%'</span>]}
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Com constante</span>
+adf_2 = {<span class="hljs-string">'adf'</span>:adfuller(serie_diff)[<span class="hljs-number">0</span>],<span class="hljs-string">'pvalue'</span>:adfuller(serie_diff)[<span class="hljs-number">1</span>],<span class="hljs-string">'Nº de lags'</span>: adfuller(serie_diff)[<span class="hljs-number">2</span>],<span class="hljs-string">'Critical_value'</span>:adfuller(serie_diff)[<span class="hljs-number">4</span>][<span class="hljs-string">'5%'</span>]}
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Sem constante e Sem tendência </span>
+adf_3 = {<span class="hljs-string">'adf'</span>:adfuller(serie_diff,regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">0</span>],<span class="hljs-string">'pvalue'</span>:adfuller(serie_diff,regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">1</span>],<span class="hljs-string">'Nº de lags'</span>: adfuller(serie_diff,regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">2</span>],<span class="hljs-string">'Critical_value'</span>:adfuller(serie_diff, regression=<span class="hljs-string">"nc"</span>)[<span class="hljs-number">4</span>][<span class="hljs-string">'5%'</span>]}
+</code></pre><pre><code class="R hljs"><span class="hljs-comment"># Test Augmented Dickey-Fuller - Sem constante e sem tendência </span>
+<span class="hljs-attr">adf_1</span> = ur.df(serie_diff,type=<span class="hljs-string">"trend"</span>)
+
+<span class="hljs-comment"># Test Augmented -Fuller - Com constante e com tendência </span>
+<span class="hljs-attr">adf_2</span> = ur.df(serie_diff,type=<span class="hljs-string">"drift"</span>)
+
+<span class="hljs-comment"># Test Augmented Dickey-Fuller - Sem constante e Sem tendência </span>
+<span class="hljs-attr">adf_3</span> = ur.df(serie_diff,type=<span class="hljs-string">"none"</span>)
+
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:right"><span>adf</span></th>
+<th style="text-align:right"><span>pvalue</span></th>
+<th style="text-align:right"><span>Nº de lags</span></th>
+<th style="text-align:right"><span>Critical_value</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><span>Com constante e tendência</span></td>
+<td style="text-align:right"><span>-2.2136</span></td>
+<td style="text-align:right"><span>0.482198</span></td>
+<td style="text-align:right"><span>11</span></td>
+<td style="text-align:right"><span>-3.45044</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>Com constante e sem tendência</span></td>
+<td style="text-align:right"><span>-2.46914</span></td>
+<td style="text-align:right"><span>0.123164</span></td>
+<td style="text-align:right"><span>11</span></td>
+<td style="text-align:right"><span>-2.88771</span></td>
+</tr>
+<tr>
+<td style="text-align:right"><span>Sem tendência e sem constante</span></td>
+<td style="text-align:right"><span>-2.06031</span></td>
+<td style="text-align:right"><span>0.0377089</span></td>
+<td style="text-align:right"><span>11</span></td>
+<td style="text-align:right"><span>-1.94364</span></td>
+</tr>
+</tbody>
+</table><pre><code class="python hljs"><span class="hljs-comment"># Autocorrelação</span>
+autocorrelação = acf(serie_diff)
+
+<span class="hljs-comment"># Autocorrelação Parcial </span>
+autocorrelação_parcial = pacf(serie_diff)
+</code></pre><h4 id="422-Correlograma" data-id="422-Correlograma"><a class="anchor hidden-xs" href="#422-Correlograma" title="422-Correlograma"><span class="octicon octicon-link"></span></a><span>4.2.2 Correlograma</span></h4><pre><code class="R hljs"><span class="hljs-comment"># Autocorrelação</span>
+autocorrelação = acf(serie_diff)
+
+<span class="hljs-comment"># Autocorrelação Parcial </span>
+autocorrelação_parcial = pacf(serie_diff)
+</code></pre><ul>
+<li>
+<p><strong><span>Função de autocorrelação</span></strong><br>
+<img src="https://i.imgur.com/fEVaXqa.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p><strong><span>Função de autocorrelação parcial</span></strong><br>
+<img src="https://i.imgur.com/SrYTLTB.png" alt="" loading="lazy"></p>
+</li>
+</ul><h2 id="5-Modelando-a-Serie-Temporal" data-id="5-Modelando-a-Serie-Temporal"><a class="anchor hidden-xs" href="#5-Modelando-a-Serie-Temporal" title="5-Modelando-a-Serie-Temporal"><span class="octicon octicon-link"></span></a><span>5. Modelando a Serie Temporal</span></h2><p><span>Os modelos ARMA (p, q) têm uma história rica na literatura de séries temporais, mas não são tão comuns na ecologia como os modelos AR § simples, como discute Holmes, Scheuerell e Ward (2021).</span><br>
+<span>POdemos escrever os modelos ARMA(p,q) como uma combinação de modelos AR§ e modelos MA(q) models, que é representada por</span></p><p><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math MJXp-display" id="MJXp-Span-651"><span class="MJXp-mtable" id="MJXp-Span-652"><span><span class="MJXp-mtr" id="MJXp-Span-653" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-654" style="text-align: right;"><span class="MJXp-mtable" id="MJXp-Span-655"><span><span class="MJXp-mtr" id="MJXp-Span-656" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-657" style="text-align: right;"><span class="MJXp-msubsup" id="MJXp-Span-658"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-659" style="margin-right: 0.05em;">x</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-660" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-661" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-msubsup" id="MJXp-Span-662"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-663" style="margin-right: 0.05em;">ϕ</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-664" style="vertical-align: -0.4em;">1</span></span><span class="MJXp-msubsup" id="MJXp-Span-665"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-666" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-667" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-668">t</span><span class="MJXp-mo" id="MJXp-Span-669">−</span><span class="MJXp-mn" id="MJXp-Span-670">1</span></span></span><span class="MJXp-mo" id="MJXp-Span-671" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-672"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-673" style="margin-right: 0.05em;">ϕ</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-674" style="vertical-align: -0.4em;">2</span></span><span class="MJXp-msubsup" id="MJXp-Span-675"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-676" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-677" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-678">t</span><span class="MJXp-mo" id="MJXp-Span-679">−</span><span class="MJXp-mn" id="MJXp-Span-680">2</span></span></span><span class="MJXp-mo" id="MJXp-Span-681" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mo" id="MJXp-Span-682" style="margin-left: 0em; margin-right: 0em;">⋯</span><span class="MJXp-mo" id="MJXp-Span-683" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-684"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-685" style="margin-right: 0.05em;">ϕ</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-686" style="vertical-align: -0.4em;">p</span></span><span class="MJXp-msubsup" id="MJXp-Span-687"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-688" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-689" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-690">t</span><span class="MJXp-mo" id="MJXp-Span-691">−</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-692">p</span></span></span><span class="MJXp-mo" id="MJXp-Span-693" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-694"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-695" style="margin-right: 0.05em;">ϵ</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-696" style="vertical-align: -0.4em;">t</span></span><span class="MJXp-mo" id="MJXp-Span-697" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-698">θ</span><span class="MJXp-msubsup" id="MJXp-Span-699"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-700" style="margin-right: 0.05em;">ϵ</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-701" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-702">t</span><span class="MJXp-mo" id="MJXp-Span-703">−</span><span class="MJXp-mn" id="MJXp-Span-704">1</span></span></span><span class="MJXp-mo" id="MJXp-Span-705" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-706"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-707" style="margin-right: 0.05em;">θ</span><span class="MJXp-mn MJXp-script" id="MJXp-Span-708" style="vertical-align: -0.4em;">2</span></span><span class="MJXp-msubsup" id="MJXp-Span-709"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-710" style="margin-right: 0.05em;">ϵ</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-711" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-712">t</span><span class="MJXp-mo" id="MJXp-Span-713">−</span><span class="MJXp-mn" id="MJXp-Span-714">2</span></span></span><span class="MJXp-mo" id="MJXp-Span-715" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mo" id="MJXp-Span-716" style="margin-left: 0em; margin-right: 0em;">⋯</span><span class="MJXp-mo" id="MJXp-Span-717" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-msubsup" id="MJXp-Span-718"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-719" style="margin-right: 0.05em;">θ</span><span class="MJXp-mi MJXp-italic MJXp-script" id="MJXp-Span-720" style="vertical-align: -0.4em;">q</span></span><span class="MJXp-msubsup" id="MJXp-Span-721"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-722" style="margin-right: 0.05em;">x</span><span class="MJXp-mrow MJXp-script" id="MJXp-Span-723" style="vertical-align: -0.4em;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-724">t</span><span class="MJXp-mo" id="MJXp-Span-725">−</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-726">q</span></span></span></span></span></span></span></span></span></span></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-62">
+\begin{aligned}
+\begin{split}
+x_t = \phi_1x_{t − 1} + \phi_2 x_{t−2}+⋯+\phi_p x_{t−p}+ \epsilon_t+\theta \epsilon_{t−1}+\theta_2 \epsilon_{t−2}+⋯+\theta_q x_{t−q}
+\end{split}
+\end{aligned}
+</script></span></p><h3 id="51-Descobrindo-o-melhor-modelo---ARIMA" data-id="51-Descobrindo-o-melhor-modelo---ARIMA"><a class="anchor hidden-xs" href="#51-Descobrindo-o-melhor-modelo---ARIMA" title="51-Descobrindo-o-melhor-modelo---ARIMA"><span class="octicon octicon-link"></span></a><span>5.1 Descobrindo o melhor modelo - ARIMA</span></h3><p><span>A seleção de um modelo que se ajuste sofre com </span><em><span>trade off</span></em><span> entre o ajuste de dados e a perda de de graus de liberdades na estimação. Para o auxilio da determinação do melhor modelagem dos dados, existem vários modelos critérios de seleção que compensam uma redução na soma dos quadrados dos resíduos por um modelo mais parcimonioso. Segundo Enders (2014), os dois critérios de seleção de modelos mais comumente usados são o Akaike Information Criterion (AIC) e o Bayesian information criterion (BIC).</span></p><ul>
+<li>
+<p><strong><span>Akaike Information Criterion (AIC)</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-727"><span class="MJXp-mo" id="MJXp-Span-728" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-63">\rightarrow</script></span><span> Foi formulado pelo estatístico japonês Hirotugu Akaike, sendo uma métrica que mensura a qualidade de um modelo estatístico visando também a sua simplicidade. Fornece, portanto, uma métrica para comparação e seleção de modelos, em que menores valores de AIC representam uma maior qualidade e simplicidade, segundo este critério.</span><br>
+<span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math MJXp-display" id="MJXp-Span-729"><span class="MJXp-mtable" id="MJXp-Span-730"><span><span class="MJXp-mtr" id="MJXp-Span-731" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-732" style="text-align: right;"><span class="MJXp-mtable" id="MJXp-Span-733"><span><span class="MJXp-mtr" id="MJXp-Span-734" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-735" style="text-align: right;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-736">A</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-737">I</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-738">C</span><span class="MJXp-mo" id="MJXp-Span-739" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-mo" id="MJXp-Span-740" style="margin-left: 0.267em; margin-right: 0.267em;">−</span><span class="MJXp-mstyle" id="MJXp-Span-741"><span class="MJXp-mfrac" id="MJXp-Span-742" style="vertical-align: 0.25em;"><span class="MJXp-box"><span class="MJXp-mn" id="MJXp-Span-743">2</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-744">l</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-745">n</span><span class="MJXp-mo" id="MJXp-Span-746" style="margin-left: 0em; margin-right: 0em;">(</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-747">L</span><span class="MJXp-mo" id="MJXp-Span-748" style="margin-left: 0em; margin-right: 0em;">)</span></span><span class="MJXp-box" style="margin-top: -0.9em;"><span class="MJXp-denom"><span><span class="MJXp-rule" style="height: 1em; border-top: medium none; border-bottom: 1px solid; margin: 0.1em 0px;"></span></span><span><span class="MJXp-box"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-749">T</span></span></span></span></span></span></span><span class="MJXp-mo" id="MJXp-Span-750" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mstyle" id="MJXp-Span-751"><span class="MJXp-mfrac" id="MJXp-Span-752" style="vertical-align: 0.25em;"><span class="MJXp-box"><span class="MJXp-mn" id="MJXp-Span-753">2</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-754">N</span></span><span class="MJXp-box" style="margin-top: -0.9em;"><span class="MJXp-denom"><span><span class="MJXp-rule" style="height: 1em; border-top: medium none; border-bottom: 1px solid; margin: 0.1em 0px;"></span></span><span><span class="MJXp-box"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-755">T</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-64">
+\begin{aligned}
+\begin{split}
+AIC = -\dfrac{2 ln(L)}{T} + \dfrac{2N}{T}
+\end{split}
+\end{aligned}
+</script></span></p>
+</li>
+<li>
+<p><strong><span>Bayesian information criterion (BIC)</span></strong><span> </span><span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math" id="MJXp-Span-756"><span class="MJXp-mo" id="MJXp-Span-757" style="margin-left: 0.333em; margin-right: 0.333em;">→</span></span></span><script type="math/tex" id="MathJax-Element-65">\rightarrow</script></span><span> É um critério para seleção de modelo entre um conjunto finito de modelos; o modelo com o BIC mais baixo é o preferido. Baseia-se, em parte, na função de verossimilhança e está intimamente relacionado ao critério de informação de Akaike (AIC).</span><br>
+<span class="mathjax raw"><span class="MathJax_Preview" style="color: inherit;"><span class="MJXp-math MJXp-display" id="MJXp-Span-758"><span class="MJXp-mtable" id="MJXp-Span-759"><span><span class="MJXp-mtr" id="MJXp-Span-760" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-761" style="text-align: right;"><span class="MJXp-mtable" id="MJXp-Span-762"><span><span class="MJXp-mtr" id="MJXp-Span-763" style="vertical-align: baseline;"><span class="MJXp-mtd" id="MJXp-Span-764" style="text-align: right;"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-765">B</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-766">I</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-767">C</span><span class="MJXp-mo" id="MJXp-Span-768" style="margin-left: 0.333em; margin-right: 0.333em;">=</span><span class="MJXp-mo" id="MJXp-Span-769" style="margin-left: 0.267em; margin-right: 0.267em;">−</span><span class="MJXp-mstyle" id="MJXp-Span-770"><span class="MJXp-mfrac" id="MJXp-Span-771" style="vertical-align: 0.25em;"><span class="MJXp-box"><span class="MJXp-mn" id="MJXp-Span-772">2</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-773">l</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-774">n</span><span class="MJXp-mo" id="MJXp-Span-775" style="margin-left: 0em; margin-right: 0em;">(</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-776">L</span><span class="MJXp-mo" id="MJXp-Span-777" style="margin-left: 0em; margin-right: 0em;">)</span></span><span class="MJXp-box" style="margin-top: -0.9em;"><span class="MJXp-denom"><span><span class="MJXp-rule" style="height: 1em; border-top: medium none; border-bottom: 1px solid; margin: 0.1em 0px;"></span></span><span><span class="MJXp-box"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-778">T</span></span></span></span></span></span></span><span class="MJXp-mo" id="MJXp-Span-779" style="margin-left: 0.267em; margin-right: 0.267em;">+</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-780">n</span><span class="MJXp-mstyle" id="MJXp-Span-781"><span class="MJXp-mfrac" id="MJXp-Span-782" style="vertical-align: 0.25em;"><span class="MJXp-box"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-783">l</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-784">n</span><span class="MJXp-mo" id="MJXp-Span-785" style="margin-left: 0em; margin-right: 0em;">(</span><span class="MJXp-mi MJXp-italic" id="MJXp-Span-786">T</span><span class="MJXp-mo" id="MJXp-Span-787" style="margin-left: 0em; margin-right: 0em;">)</span></span><span class="MJXp-box" style="margin-top: -0.9em;"><span class="MJXp-denom"><span><span class="MJXp-rule" style="height: 1em; border-top: medium none; border-bottom: 1px solid; margin: 0.1em 0px;"></span></span><span><span class="MJXp-box"><span class="MJXp-mi MJXp-italic" id="MJXp-Span-788">T</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-66">
+\begin{aligned}
+\begin{split}
+BIC = -\dfrac{2 ln(L)}{T} + n \dfrac{ln(T)}{T}
+\end{split}
+\end{aligned}
+</script></span></p>
+</li>
+</ul><p><span>Portanto para encontrar o melhor modelo pode-se utilizar os seguintes códigos :</span></p><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Função de detecção de melhores modelos </span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">best_arima</span>(<span class="hljs-params">serie,order,criterion</span>):</span>
+    Modelo,Bic,Aic,Aicc = [],[],[],[]
+    <span class="hljs-keyword">for</span> ar <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>):
+            <span class="hljs-keyword">for</span> ma <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">2</span>]+<span class="hljs-number">1</span>):
+                    print(serie)
+                    arima = ARIMA(serie,order=(ar,i,ma))
+                    model = arima.fit()
+                    print(model.summary())
+                    Modelo.append(<span class="hljs-built_in">str</span>(ar)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(i)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(ma))
+                    Bic.append(model.bic)
+                    Aic.append(model.aic)
+                    Aicc.append(model.aicc)
+    dic = {<span class="hljs-string">'Modelo'</span>:Modelo,<span class="hljs-string">'Bic'</span>:Bic,<span class="hljs-string">'Aic'</span>:Aic,<span class="hljs-string">'Aicc'</span>:Aicc}
+    data = pd.DataFrame(dic)
+    <span class="hljs-keyword">return</span> data.sort_values(by=[criterion],ascending=<span class="hljs-literal">True</span>)
+
+</code></pre><pre><code class="python hljs"><span class="hljs-comment"># Melhor modelo bic</span>
+modelo_bic = best_arima(serie,order=[<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>],criterion=<span class="hljs-string">'Bic'</span>)
+arima_bic = ARIMA(serie,order=(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))
+model_bic = arima_bic.fit()
+model_bic.summary()
+
+<span class="hljs-comment"># Melhor modelo aic</span>
+modelo_aic = best_arima(serie,order=[<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>],criterion=<span class="hljs-string">'Aic'</span>)
+arima_aic = ARIMA(serie,order=(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))
+model_aic = arima_aic.fit()
+model_aic.summary()
+
+<span class="hljs-comment"># Melhor modelo aicc</span>
+modelo_aicc = best_arima(serie,order=[<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>],criterion=<span class="hljs-string">'Aicc'</span>)
+arima_aicc = ARIMA(serie,order=[<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>])
+model_aicc = arima_aicc.fit()
+model_aicc.summary()
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># Melhor modelo bic</span>
+modelo_bic=auto.arima(<span class="hljs-keyword">as</span>.numeric(serie),<span class="hljs-built_in">max</span>.p=<span class="hljs-number">4</span>,<span class="hljs-built_in">max</span>.q=<span class="hljs-number">4</span>,<span class="hljs-built_in">max</span>.d=<span class="hljs-number">1</span>,ic=c(<span class="hljs-string">"bic"</span>))
+summary(modelo_bic)
+
+<span class="hljs-comment"># Melhor modelo aic </span>
+modelo_aic=auto.arima(<span class="hljs-keyword">as</span>.numeric(serie),<span class="hljs-built_in">max</span>.p=<span class="hljs-number">4</span>,<span class="hljs-built_in">max</span>.q=<span class="hljs-number">4</span>,<span class="hljs-built_in">max</span>.d=<span class="hljs-number">1</span>,ic=c(<span class="hljs-string">"aic"</span>))
+summary(modelo_aic)
+
+<span class="hljs-comment"># Melhor modelo aicc </span>
+modelo_aicc=auto.arima(<span class="hljs-keyword">as</span>.numeric(serie),<span class="hljs-built_in">max</span>.p=<span class="hljs-number">4</span>,<span class="hljs-built_in">max</span>.q=<span class="hljs-number">4</span>,<span class="hljs-built_in">max</span>.d=<span class="hljs-number">1</span>,ic=c(<span class="hljs-string">"aicc"</span>))
+summary(modelo_aicc)
+</code></pre><ul>
+<li><strong><span>Modelo Aicc</span></strong></li>
+</ul><table>
+<thead>
+<tr>
+<th style="text-align:left"><span>Modelo</span></th>
+<th style="text-align:right"><span>Bic</span></th>
+<th style="text-align:right"><span>Aic</span></th>
+<th style="text-align:right"><span>Aicc</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span>3,1,3</span></td>
+<td style="text-align:right"><span>750.64</span></td>
+<td style="text-align:right"><span>730.898</span></td>
+<td style="text-align:right"><span>731.863</span></td>
+</tr>
+</tbody>
+</table><ul>
+<li><strong><span>Modelo Aic</span></strong></li>
+</ul><table>
+<thead>
+<tr>
+<th style="text-align:left"><span>Modelo</span></th>
+<th style="text-align:right"><span>Bic</span></th>
+<th style="text-align:right"><span>Aic</span></th>
+<th style="text-align:right"><span>Aicc</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span>3,1,3</span></td>
+<td style="text-align:right"><span>750.64</span></td>
+<td style="text-align:right"><span>730.898</span></td>
+<td style="text-align:right"><span>731.863</span></td>
+</tr>
+</tbody>
+</table><ul>
+<li><strong><span>Modelo Bic</span></strong></li>
+</ul><table>
+<thead>
+<tr>
+<th style="text-align:left"><span>Modelo</span></th>
+<th style="text-align:right"><span>Bic</span></th>
+<th style="text-align:right"><span>Aic</span></th>
+<th style="text-align:right"><span>Aicc</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span>3,1,3</span></td>
+<td style="text-align:right"><span>750.64</span></td>
+<td style="text-align:right"><span>730.898</span></td>
+<td style="text-align:right"><span>731.863</span></td>
+</tr>
+</tbody>
+</table><h3 id="52-Descobrindo-o-melhor-modelo---SARIMA" data-id="52-Descobrindo-o-melhor-modelo---SARIMA"><a class="anchor hidden-xs" href="#52-Descobrindo-o-melhor-modelo---SARIMA" title="52-Descobrindo-o-melhor-modelo---SARIMA"><span class="octicon octicon-link"></span></a><span>5.2 Descobrindo o melhor modelo - SARIMA</span></h3><p><span>Como define Graves (2020), os modelos SARIMA são modelos ARIMA com um componente sazonal. Pela fórmula SARIMA (p, d, q) x (P, D, Q, s).</span><br>
+<span>Portanto podemos estimar o modelo sarima da seguinte forma</span></p><pre><code class="python hljs"><span class="hljs-comment"># Função de detecção de melhores modelos </span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">best_arima</span>(<span class="hljs-params">serie,order,criterion</span>):</span>
+    Modelo,Bic,Aic,Aicc = [],[],[],[]
+    <span class="hljs-keyword">for</span> ar <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>):
+            <span class="hljs-keyword">for</span> ma <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">2</span>]+<span class="hljs-number">1</span>):
+                <span class="hljs-keyword">for</span> sar <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">3</span>]+<span class="hljs-number">1</span>):
+                    <span class="hljs-keyword">for</span> si <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">4</span>]+<span class="hljs-number">1</span>):
+                        <span class="hljs-keyword">for</span> sma <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">5</span>]+<span class="hljs-number">1</span>):
+                            <span class="hljs-keyword">for</span> saz <span class="hljs-keyword">in</span> [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">12</span>]:
+                                <span class="hljs-keyword">try</span>:
+                                    arima = ARIMA(serie,order=(ar,i,ma),seasonal_order=(sar,si,sma,saz))
+                                    model = arima.fit()
+                                    Modelo.append(<span class="hljs-string">"("</span>+<span class="hljs-built_in">str</span>(ar)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(i)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(ma)+<span class="hljs-string">")"</span>+<span class="hljs-string">"("</span>+<span class="hljs-built_in">str</span>(sar)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(si)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(sma)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(saz)+<span class="hljs-string">")"</span>)
+                                    Bic.append(model.bic)
+                                    Aic.append(model.aic)
+                                    Aicc.append(model.aicc)
+                                <span class="hljs-keyword">except</span>:
+                                    <span class="hljs-keyword">pass</span>
+    dic = {<span class="hljs-string">'Modelo'</span>:Modelo,<span class="hljs-string">'Bic'</span>:Bic,<span class="hljs-string">'Aic'</span>:Aic,<span class="hljs-string">'Aicc'</span>:Aicc}
+    data = pd.DataFrame(dic)
+    <span class="hljs-keyword">return</span> data.sort_values(by=[criterion],ascending=<span class="hljs-literal">True</span>)
+</code></pre><pre><code class="python hljs"><span class="hljs-comment"># Melhor modelo bic</span>
+modelo_bic = best_arima(serie,order=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">12</span>],criterion=<span class="hljs-string">'Bic'</span>)
+arima_bic = ARIMA(serie,order=(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))
+model_bic = arima_bic.fit()
+model_bic.summary()
+
+<span class="hljs-comment"># Melhor modelo aic</span>
+modelo_bic = best_arima(serie,order=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">12</span>],criterion=<span class="hljs-string">'Aic'</span>)
+arima_aic = ARIMA(serie,order=(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))
+model_aic = arima_aic.fit()
+model_aic.summary()
+
+<span class="hljs-comment"># Melhor modelo aicc</span>
+modelo_bic = best_arima(serie,order=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">12</span>],criterion=<span class="hljs-string">'aicc'</span>)
+arima_aicc = ARIMA(serie,order=[<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>])
+model_aicc = arima_aicc.fit()
+model_aicc.summary()
+</code></pre><h3 id="53-Descobrindo-o-melhor-modelo---Naive-Bayes" data-id="53-Descobrindo-o-melhor-modelo---Naive-Bayes"><a class="anchor hidden-xs" href="#53-Descobrindo-o-melhor-modelo---Naive-Bayes" title="53-Descobrindo-o-melhor-modelo---Naive-Bayes"><span class="octicon octicon-link"></span></a><span>5.3 Descobrindo o melhor modelo - Naive Bayes</span></h3><p><span>O algoritmo “Naive Bayes” é um classificador probabilístico baseado no “Teorema de Bayes”, o qual foi criado por Thomas Bayes (1701 - 1761) para tentar provar a existência de Deus.</span></p><p><span>Portanto como define Becker (2019), O algoritmo de Naive Bayes consiste em encontrar uma probabilidade a posteriori (possuir a doença, dado que recebeu um resultado positivo), multiplicando a probabilidade a priori (possuir a doença) pela probabilidade de “receber um resultado positivo, dado que tem a doença”.</span></p><p><span>Para modelagem</span></p><pre><code class="python hljs"><span class="hljs-comment"># Definindo as amostras de treino e teste</span>
+serie_train = serie_diff[<span class="hljs-number">0</span>:<span class="hljs-built_in">int</span>(<span class="hljs-built_in">len</span>(serie_diff)*<span class="hljs-number">0.8</span>)]
+serie_test = serie_diff[<span class="hljs-built_in">int</span>(<span class="hljs-built_in">len</span>(serie_diff)*<span class="hljs-number">0.8</span>):]
+
+<span class="hljs-comment"># Definindo o intervalo de armazenamento de dados </span>
+n_bins = <span class="hljs-number">10</span>
+bins = np.linspace(serie_train.<span class="hljs-built_in">min</span>(), serie_train.<span class="hljs-built_in">max</span>(), n_bins)
+binned = np.digitize(serie_train, bins)
+
+<span class="hljs-comment"># Criando uma serie de dados armazenados</span>
+serie_train1 = pd.Series(binned, index = serie_train.index)
+
+<span class="hljs-comment"># Media de realizações da serie</span>
+bin_means = {}
+<span class="hljs-keyword">for</span> binn <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,n_bins+<span class="hljs-number">1</span>):
+    bin_means[binn] = serie_train[binned == binn].mean()
+
+<span class="hljs-comment"># Dataframe com defasagens</span>
+lagged_list = []
+<span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">13</span>):
+    lagged_list.append(serie_train1.shift(s))
+lagged_frame = pd.concat(lagged_list,<span class="hljs-number">1</span>).dropna()
+
+<span class="hljs-comment"># Criando as amostras de treino</span>
+train_X = lagged_frame.iloc[:,<span class="hljs-number">1</span>:]
+train_y = lagged_frame.iloc[:,<span class="hljs-number">0</span>]
+
+<span class="hljs-comment"># Modelando a Serie temporal </span>
+<span class="hljs-comment"># Setando o modelo Naive Bayes Gaussiano</span>
+model = GaussianNB()
+
+<span class="hljs-comment"># Ajustando o modelo com as amostras de treino </span>
+model.fit(train_X, train_y)
+</code></pre><h2 id="6-Modelando-a-Serie-Temporal" data-id="6-Modelando-a-Serie-Temporal"><a class="anchor hidden-xs" href="#6-Modelando-a-Serie-Temporal" title="6-Modelando-a-Serie-Temporal"><span class="octicon octicon-link"></span></a><span>6. Modelando a Serie Temporal</span></h2><h3 id="61-Econtrando-os-melhores-modelos-preditivos---ARIMA" data-id="61-Econtrando-os-melhores-modelos-preditivos---ARIMA"><a class="anchor hidden-xs" href="#61-Econtrando-os-melhores-modelos-preditivos---ARIMA" title="61-Econtrando-os-melhores-modelos-preditivos---ARIMA"><span class="octicon octicon-link"></span></a><span>6.1 Econtrando os melhores modelos preditivos - ARIMA</span></h3><pre><code class="python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">best_forecast</span>(<span class="hljs-params">serie,order</span>):</span>
+    Modelo, Rmse =[],[]
+    <span class="hljs-keyword">for</span> ar <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>):
+            <span class="hljs-keyword">for</span> ma <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">2</span>]+<span class="hljs-number">1</span>):
+                arima = ARIMA(serie,order=(ar,i,ma))
+                model = arima.fit()
+                Modelo.append(<span class="hljs-built_in">str</span>(ar)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(i)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(ma))
+                Rmse.append(np.sqrt(model.mse))
+    dic = {<span class="hljs-string">'Modelo'</span>:Modelo,<span class="hljs-string">'Rmse'</span>:Rmse}
+    data = pd.DataFrame(dic)
+    <span class="hljs-keyword">return</span> data.sort_values(by=[<span class="hljs-string">'Rmse'</span>],ascending=<span class="hljs-literal">True</span>)            
+</code></pre><h4 id="612-Gerando-previsões" data-id="612-Gerando-previsões"><a class="anchor hidden-xs" href="#612-Gerando-previsões" title="612-Gerando-previsões"><span class="octicon octicon-link"></span></a><span>6.1.2 Gerando previsões</span></h4><ul>
+<li><strong><span>Python</span></strong></li>
+</ul><pre><code class="python hljs"><span class="hljs-comment"># Gerando o melhor modelo arma para previsão </span>
+modelo_rmse = best_forecast(serie,[<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>])
+arima_rmse = ARIMA(serie,order=[<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>])
+model_rmse = arima_rmse.fit()
+</code></pre><pre><code class="python hljs"><span class="hljs-comment"># Previsão: Forecast </span>
+forecast_rmse = model_rmse.forecast(steps=<span class="hljs-number">7</span>)
+<span class="hljs-comment"># Previsão: Predict </span>
+predict_rmse = model_rmse.predict(start=<span class="hljs-number">125</span>,end=<span class="hljs-number">131</span>) 
+</code></pre><pre><code class="R hljs"><span class="hljs-comment"># Econtrando os melhores modelos preditivos</span>
+best_forecast&lt;-function(serie,order){
+    modelo =c()
+    Rmse = c()
+    <span class="hljs-keyword">for</span>(ar in se<span class="hljs-string">q(0,order[1]+1)</span>){
+        <span class="hljs-keyword">for</span>(i in se<span class="hljs-string">q(0,order[2]+1)</span>){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">ma</span> in se<span class="hljs-string">q(0,order[3]+1)</span>){
+                arima = arima(serie,order=c(ar,i,<span class="hljs-keyword">ma</span>))
+                modelo&lt;-append(modelo,paste(as.character(ar),as.character(i),as.character(<span class="hljs-keyword">ma</span>)))
+                Rmse&lt;-append(Rmse,accuracy(arima)[<span class="hljs-number">2</span>])
+                }
+            }   
+        }
+    data&lt;-data.frame(modelo,Rmse)
+    <span class="hljs-keyword">return</span>(data[order(Rmse),])
+}
+</code></pre><ul>
+<li><strong><span>R</span></strong></li>
+</ul><pre><code class="R hljs"><span class="hljs-comment"># Gerando o melhor modelo modelo arma para previsão </span>
+modelo_rmse&lt;-best_forecast(serie,c(3,1,3))
+modelo_rmse&lt;-arima(serie,order=c(4,1,4))
+
+<span class="hljs-comment"># Previsão: Forecast </span>
+forecast_rmse = forecast(modelo_rmse,h=7)
+
+<span class="hljs-comment"># Previsão: Predict </span>
+predict_rmse = predict(modelo_rmse,n.ahead=7)
+</code></pre><ul>
+<li><strong><span>Modelos com menores erros médios de previsão</span></strong></li>
+</ul><table>
+<thead>
+<tr>
+<th style="text-align:left"><span>Modelo</span></th>
+<th style="text-align:right"><span>Rmse</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span>3,0,4</span></td>
+<td style="text-align:right"><span>4.87892</span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span>4,0,3</span></td>
+<td style="text-align:right"><span>4.93757</span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span>3,0,3</span></td>
+<td style="text-align:right"><span>4.98122</span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span>2,0,4</span></td>
+<td style="text-align:right"><span>5.14248</span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span>1,0,4</span></td>
+<td style="text-align:right"><span>5.14998</span></td>
+</tr>
+</tbody>
+</table><ul>
+<li><strong><span>Previsão</span></strong><br>
+<img src="https://i.imgur.com/MDZs58h.png" alt="" loading="lazy"></li>
+</ul><h3 id="62-Econtrando-os-melhores-modelos-preditivos---SARIMA" data-id="62-Econtrando-os-melhores-modelos-preditivos---SARIMA"><a class="anchor hidden-xs" href="#62-Econtrando-os-melhores-modelos-preditivos---SARIMA" title="62-Econtrando-os-melhores-modelos-preditivos---SARIMA"><span class="octicon octicon-link"></span></a><span>6.2 Econtrando os melhores modelos preditivos - SARIMA</span></h3><pre><code class="python hljs"><span class="hljs-comment"># Econtrando os melhores modelos preditivos </span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">best_forecast</span>(<span class="hljs-params">serie,order</span>):</span>
+    Modelo, Rmse =[],[]
+    <span class="hljs-keyword">for</span> ar <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>):
+            <span class="hljs-keyword">for</span> ma <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">2</span>]+<span class="hljs-number">1</span>):
+                <span class="hljs-keyword">for</span> sar <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">3</span>]+<span class="hljs-number">1</span>):
+                    <span class="hljs-keyword">for</span> si <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">4</span>]+<span class="hljs-number">1</span>):
+                        <span class="hljs-keyword">for</span> sma <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(order[<span class="hljs-number">5</span>]+<span class="hljs-number">1</span>):
+                            <span class="hljs-keyword">for</span> saz <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,order[<span class="hljs-number">6</span>]+<span class="hljs-number">1</span>):
+                                arima = ARIMA(serie,order=(ar,i,ma),seasonal_order=(sar,si,sma,saz))
+                                model = arima.fit()
+                                Modelo.append(<span class="hljs-string">"("</span>+<span class="hljs-built_in">str</span>(ar)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(i)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(ma)+<span class="hljs-string">")"</span>+<span class="hljs-string">"("</span>+<span class="hljs-built_in">str</span>(sar)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(si)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(sma)+<span class="hljs-string">","</span>+<span class="hljs-built_in">str</span>(saz)+<span class="hljs-string">")"</span>)
+                                Rmse.append(np.sqrt(model.mse))
+    dic = {<span class="hljs-string">'Modelo'</span>:Modelo,<span class="hljs-string">'Rmse'</span>:Rmse}
+    data = pd.DataFrame(dic)
+    <span class="hljs-keyword">return</span> data.sort_values(by=[<span class="hljs-string">'Rmse'</span>],ascending=<span class="hljs-literal">True</span>)            
+</code></pre><pre><code class="python hljs"><span class="hljs-comment"># Gerando previsões  </span>
+modelo_rmse = best_forecast(serie,[<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>])
+arima_rmse = ARIMA(serie,order=[<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>])
+model_rmse = arima_rmse.fit()
+
+<span class="hljs-comment"># Previsão: Forecast </span>
+forecast_rmse = model_rmse.forecast(steps=<span class="hljs-number">7</span>)
+
+<span class="hljs-comment"># Previsão: Predict </span>
+predict_rmse = model_rmse.predict(start=<span class="hljs-number">125</span>,end=<span class="hljs-number">131</span>) 
+</code></pre><h3 id="63-Naive-bayes" data-id="63-Naive-bayes"><a class="anchor hidden-xs" href="#63-Naive-bayes" title="63-Naive-bayes"><span class="octicon octicon-link"></span></a><span>6.3 Naive bayes</span></h3><pre><code class="python hljs">
+<span class="hljs-comment"># Prevendo a serie </span>
+prediction_frame = pd.DataFrame(np.nan, index = serie_test.index, columns = <span class="hljs-built_in">range</span>(train_X.shape[<span class="hljs-number">1</span>]))
+predictions = pd.Series(index = serie_test.index)
+prediction_frame.iloc[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>:] = tr.iloc[-<span class="hljs-number">1</span>,:-<span class="hljs-number">1</span>].values
+prediction_frame.iloc[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>] = train_y.iloc[-<span class="hljs-number">1</span>]
+
+<span class="hljs-comment"># Media das amostras de treino</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_mean_from_class</span>(<span class="hljs-params">prediction</span>):</span>
+    <span class="hljs-keyword">return</span>(bin_means[prediction[<span class="hljs-number">0</span>]])
+
+<span class="hljs-comment"># Criando previsões</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(serie_test)):
+    pred = model.predict(prediction_frame.iloc[i,:].values.reshape(<span class="hljs-number">1</span>,-<span class="hljs-number">1</span>))
+    pred_num = get_mean_from_class(pred.reshape(-<span class="hljs-number">1</span>))
+    predictions.iloc[i] = pred_num
+    <span class="hljs-keyword">try</span>:
+        prediction_frame.iloc[i+<span class="hljs-number">1</span>,<span class="hljs-number">1</span>:] = prediction_frame.iloc[i,:-<span class="hljs-number">1</span>].values
+        prediction_frame.iloc[i+<span class="hljs-number">1</span>,<span class="hljs-number">0</span>] = pred[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">pass</span>
+
+
+
+trend_test = np.arange(<span class="hljs-built_in">len</span>(train),<span class="hljs-built_in">len</span>(train)+<span class="hljs-built_in">len</span>(serie_test)).reshape(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+final_prediction = predictions.cumsum()* ((trend_test+<span class="hljs-number">1</span>)**(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)).reshape(-<span class="hljs-number">1</span>)+train.iloc[-<span class="hljs-number">1</span>]
+rmse = np.sqrt(np.mean((serie_test-final_prediction)**<span class="hljs-number">2</span>))
+
+</code></pre><p><img src="https://i.imgur.com/J0GSY3b.png" alt="" loading="lazy"></p><h3 id="64-Comparação-dos-modelos" data-id="64-Comparação-dos-modelos"><a class="anchor hidden-xs" href="#64-Comparação-dos-modelos" title="64-Comparação-dos-modelos"><span class="octicon octicon-link"></span></a><span>6.4 Comparação dos modelos</span></h3><table>
+<thead>
+<tr>
+<th><span>Posição</span></th>
+<th><span>Modelo</span></th>
+<th><span>Rmse</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>1</span></td>
+<td><span>Naive Bayes</span></td>
+<td><span>124.31573804988209</span></td>
+</tr>
+<tr>
+<td><span>2</span></td>
+<td><span>ARIMA</span></td>
+<td><span>4.87892</span></td>
+</tr>
+</tbody>
+</table><hr><h1 id="Referencias" data-id="Referencias"><a class="anchor hidden-xs" href="#Referencias" title="Referencias"><span class="octicon octicon-link"></span></a><span>Referencias</span></h1><ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> O QUE é uma série temporal?. In: O que é uma série temporal?. [S. l.], 18 jun. 2019. Disponível em: </span><a href="https://support.minitab.com/pt-br/minitab/18/help-and-how-to/modeling-statistics/time-series/supporting-topics/basics/what-is-a-time-series/" target="_blank" rel="noopener"><span>https://support.minitab.com/pt-br/minitab/18/help-and-how-to/modeling-statistics/time-series/supporting-topics/basics/what-is-a-time-series/</span></a><span>. Acesso em: 25 jul. 2021.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> FREITAS, Wilson. Testes de raiz unitária: Avaliando estacionariedade em séries temporais financeiras. In: Testes de raiz unitária: Avaliando estacionariedade em séries temporais financeiras. [S. l.], 15 fev. 2012. Disponível em: </span><a href="http://wilsonfreitas.github.io/estrategias-de-trading/pdf/unit-root-tests.pdf" target="_blank" rel="noopener"><span>http://wilsonfreitas.github.io/estrategias-de-trading/pdf/unit-root-tests.pdf</span></a><span>. Acesso em: 25 jul. 2021.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> BROWNLEE , Jason. How to Identify and Remove Seasonality from Time Series Data with Python. In: BROWNLEE , Jason. How to Identify and Remove Seasonality from Time Series Data with Python. [S. l.], 23 dez. 2016. Disponível em: </span><a href="http://wilsonfreitas.github.io/estrategias-de-trading/pdf/unit-root-tests.pdf" target="_blank" rel="noopener"><span>http://wilsonfreitas.github.io/estrategias-de-trading/pdf/unit-root-tests.pdf</span></a><span>. Acesso em: 25 jul. 2021.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> SÉRIES Temporais Tendência e sazonalidade. [S. l.], 1 ago. 2015. Disponível em: </span><a href="https://docs.ufpr.br/~lucambio/CE017/2S2015/Series02.pdf" target="_blank" rel="noopener"><span>https://docs.ufpr.br/~lucambio/CE017/2S2015/Series02.pdf</span></a><span>. Acesso em: 25 jul. 2021.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> AJUSTE SAZONAL DA PRODUÇÃO INDUSTRIAL EM GOIÁS: UMA ANÁLISE DA INDÚSTRIA DE TRANSFORMAÇÃO E SUAS DESAGREGAÇÕES… In: RODRIGUES LIMA, ALEX FELIPE et al. AJUSTE SAZONAL DA PRODUÇÃO INDUSTRIAL EM GOIÁS: UMA ANÁLISE DA INDÚSTRIA DE TRANSFORMAÇÃO E SUAS DESAGREGAÇÕES… [S. l.: s. n.], 2016.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> Holmes, E. E., M. D. Scheuerell, and E. J. Ward. Applied time series analysis for fisheries and environmental data. NOAA Fisheries, Northwest Fisheries Science Center, 2725 Montlake Blvd E., Seattle, WA 98112. Contacts </span><a href="mailto:eeholmes@uw.edu" target="_blank" rel="noopener"><span>eeholmes@uw.edu</span></a><span>, </span><a href="mailto:warde@uw.edu" target="_blank" rel="noopener"><span>warde@uw.edu</span></a><span>, and </span><a href="mailto:scheuerl@uw.edu" target="_blank" rel="noopener"><span>scheuerl@uw.edu</span></a></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span> GRAVES , Andrew. Time Series Forecasting with a SARIMA Model: Predicting daily electricity loads for a building on the UC Berkeley campus. In: Time Series Forecasting with a SARIMA Model. [S. l.], 2021. Disponível em: </span><a href="https://towardsdatascience.com/time-series-forecasting-with-a-sarima-model-db051b7ae459" target="_blank" rel="noopener"><span>https://towardsdatascience.com/time-series-forecasting-with-a-sarima-model-db051b7ae459</span></a><span>. Acesso em: 25 jul. 2021.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span>  Enders, W. (2014) Applied Econometric Time Series. 4th Edition. John Wiley, New York.</span></p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked="" type="checkbox" disabled="disabled"><span>  Hamilton, J. D. (1994). Time Series Analysis. Princeton University Press. ISBN: 0691042896</span></p>
+</li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li><a href="#A-Pesquisa-Mensal-de-Serviços-PMS" title="A Pesquisa Mensal de Serviços (PMS)">A Pesquisa Mensal de Serviços (PMS)</a><ul class="nav">
+<li><a href="#1-Pacotes" title="1. Pacotes">1. Pacotes</a></li>
+<li><a href="#2-Coletando-os-dados" title="2. Coletando os dados">2. Coletando os dados</a><ul class="nav">
+<li><a href="#21-Acessando-os-dados" title="2.1 Acessando os dados">2.1 Acessando os dados</a></li>
+</ul>
+</li>
+<li><a href="#3-Limpando-os-dados" title="3. Limpando os dados">3. Limpando os dados</a><ul class="nav">
+<li><a href="#31-Renomeando-as-colunas" title="3.1 Renomeando as colunas">3.1 Renomeando as colunas</a></li>
+<li><a href="#32-Filtrando-as-colunas" title="3.2 Filtrando as colunas">3.2 Filtrando as colunas</a></li>
+<li><a href="#33-Ajustando-as-unidades-de-tempo" title="3.3 Ajustando as unidades de tempo">3.3 Ajustando as unidades de tempo</a></li>
+<li><a href="#34-Criando-uma-serie-temporal" title="3.4 Criando uma serie temporal">3.4 Criando uma serie temporal</a></li>
+</ul>
+</li>
+<li><a href="#4-Modelando-as-series-temporais" title="4 Modelando as series temporais">4 Modelando as series temporais</a><ul class="nav">
+<li><a href="#41-Testes" title="4.1 Testes">4.1 Testes</a></li>
+<li><a href="#413-Correlograma" title="4.1.3 Correlograma">4.1.3 Correlograma</a></li>
+<li><a href="#42-Diferenciando-as-series" title="4.2 Diferenciando as series">4.2 Diferenciando as series</a></li>
+</ul>
+</li>
+<li><a href="#5-Modelando-a-Serie-Temporal" title="5. Modelando a Serie Temporal">5. Modelando a Serie Temporal</a><ul class="nav">
+<li><a href="#51-Descobrindo-o-melhor-modelo---ARIMA" title="5.1 Descobrindo o melhor modelo - ARIMA">5.1 Descobrindo o melhor modelo - ARIMA</a></li>
+<li><a href="#52-Descobrindo-o-melhor-modelo---SARIMA" title="5.2 Descobrindo o melhor modelo - SARIMA">5.2 Descobrindo o melhor modelo - SARIMA</a></li>
+<li><a href="#53-Descobrindo-o-melhor-modelo---Naive-Bayes" title="5.3 Descobrindo o melhor modelo - Naive Bayes">5.3 Descobrindo o melhor modelo - Naive Bayes</a></li>
+</ul>
+</li>
+<li><a href="#6-Modelando-a-Serie-Temporal" title="6. Modelando a Serie Temporal">6. Modelando a Serie Temporal</a><ul class="nav">
+<li><a href="#61-Econtrando-os-melhores-modelos-preditivos---ARIMA" title="6.1 Econtrando os melhores modelos preditivos - ARIMA">6.1 Econtrando os melhores modelos preditivos - ARIMA</a></li>
+<li><a href="#62-Econtrando-os-melhores-modelos-preditivos---SARIMA" title="6.2 Econtrando os melhores modelos preditivos - SARIMA">6.2 Econtrando os melhores modelos preditivos - SARIMA</a></li>
+<li><a href="#63-Naive-bayes" title="6.3 Naive bayes">6.3 Naive bayes</a></li>
+<li><a href="#64-Comparação-dos-modelos" title="6.4 Comparação dos modelos">6.4 Comparação dos modelos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Referencias" title="Referencias">Referencias</a></li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li><a href="#A-Pesquisa-Mensal-de-Serviços-PMS" title="A Pesquisa Mensal de Serviços (PMS)">A Pesquisa Mensal de Serviços (PMS)</a><ul class="nav">
+<li><a href="#1-Pacotes" title="1. Pacotes">1. Pacotes</a></li>
+<li><a href="#2-Coletando-os-dados" title="2. Coletando os dados">2. Coletando os dados</a><ul class="nav">
+<li><a href="#21-Acessando-os-dados" title="2.1 Acessando os dados">2.1 Acessando os dados</a></li>
+</ul>
+</li>
+<li><a href="#3-Limpando-os-dados" title="3. Limpando os dados">3. Limpando os dados</a><ul class="nav">
+<li><a href="#31-Renomeando-as-colunas" title="3.1 Renomeando as colunas">3.1 Renomeando as colunas</a></li>
+<li><a href="#32-Filtrando-as-colunas" title="3.2 Filtrando as colunas">3.2 Filtrando as colunas</a></li>
+<li><a href="#33-Ajustando-as-unidades-de-tempo" title="3.3 Ajustando as unidades de tempo">3.3 Ajustando as unidades de tempo</a></li>
+<li><a href="#34-Criando-uma-serie-temporal" title="3.4 Criando uma serie temporal">3.4 Criando uma serie temporal</a></li>
+</ul>
+</li>
+<li><a href="#4-Modelando-as-series-temporais" title="4 Modelando as series temporais">4 Modelando as series temporais</a><ul class="nav">
+<li><a href="#41-Testes" title="4.1 Testes">4.1 Testes</a></li>
+<li><a href="#413-Correlograma" title="4.1.3 Correlograma">4.1.3 Correlograma</a></li>
+<li><a href="#42-Diferenciando-as-series" title="4.2 Diferenciando as series">4.2 Diferenciando as series</a></li>
+</ul>
+</li>
+<li><a href="#5-Modelando-a-Serie-Temporal" title="5. Modelando a Serie Temporal">5. Modelando a Serie Temporal</a><ul class="nav">
+<li><a href="#51-Descobrindo-o-melhor-modelo---ARIMA" title="5.1 Descobrindo o melhor modelo - ARIMA">5.1 Descobrindo o melhor modelo - ARIMA</a></li>
+<li><a href="#52-Descobrindo-o-melhor-modelo---SARIMA" title="5.2 Descobrindo o melhor modelo - SARIMA">5.2 Descobrindo o melhor modelo - SARIMA</a></li>
+<li><a href="#53-Descobrindo-o-melhor-modelo---Naive-Bayes" title="5.3 Descobrindo o melhor modelo - Naive Bayes">5.3 Descobrindo o melhor modelo - Naive Bayes</a></li>
+</ul>
+</li>
+<li><a href="#6-Modelando-a-Serie-Temporal" title="6. Modelando a Serie Temporal">6. Modelando a Serie Temporal</a><ul class="nav">
+<li><a href="#61-Econtrando-os-melhores-modelos-preditivos---ARIMA" title="6.1 Econtrando os melhores modelos preditivos - ARIMA">6.1 Econtrando os melhores modelos preditivos - ARIMA</a></li>
+<li><a href="#62-Econtrando-os-melhores-modelos-preditivos---SARIMA" title="6.2 Econtrando os melhores modelos preditivos - SARIMA">6.2 Econtrando os melhores modelos preditivos - SARIMA</a></li>
+<li><a href="#63-Naive-bayes" title="6.3 Naive bayes">6.3 Naive bayes</a></li>
+<li><a href="#64-Comparação-dos-modelos" title="6.4 Comparação dos modelos">6.4 Comparação dos modelos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Referencias" title="Referencias">Referencias</a></li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
